@@ -1,0 +1,10 @@
+{
+  "name": "footy",
+  "version": "1.0.0",
+  "description": "Search and Vote legend football match",
+  "main": "app.js",
+  "author": "JamesSleep",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
