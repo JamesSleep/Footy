@@ -1,0 +1,20 @@
+extends layouts/main
+include mixins/matchBlock
+
+block content
+    .search__header
+        h3 검색결과
+    .search__videos
+        if matches.length === 0
+            h5 경기를 찾을 수 없습니다
+        each match in matches
+            +matchBlock({
+                id : match.id,
+                home_team : match.home_team,
+                away_team : match.away_team,
+                league : match.league,
+                round : match.round,
+                year : match.year,
+                stadium : match.stadium,
+                imgUrl: match.imgUrl
+            })

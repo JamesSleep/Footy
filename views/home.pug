@@ -1,0 +1,17 @@
+extends layouts/main
+include mixins/matchBlock
+
+block content
+    .matches
+        each match in matches
+            +matchBlock({
+                id : match.id,
+                home_team : match.home_team,
+                away_team : match.away_team,
+                league : match.league,
+                round : match.round,
+                year : match.year,
+                stadium : match.stadium,
+                imgUrl: match.imgUrl
+            })
+    

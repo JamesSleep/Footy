@@ -1,0 +1,19 @@
+extends layouts/main
+
+block content
+    .form-container
+        form(action=`/matches${routes.addMatch}`, method="post", enctype="multipart/form-data" )
+            input(type="text", placeholder="HomeTeam", name="home_team", required=true)
+            input(type="text", placeholder="AwayTeam", name="away_team", required=true)
+            input(type="text", placeholder="League", name="league", required=true)
+            input(type="text", placeholder="Round", name="round", required=true)
+            input(type="text", placeholder="Year", name="year", required=true)
+            input(type="text", placeholder="HomeScore", name="home_score")
+            input(type="text", placeholder="AwayScore", name="away_score")
+            input(type="text", placeholder="Stadium", name="stadium")
+            input(type="text", placeholder="City", name="city")
+            label(for="src") 하이라이트 링크
+            input(type="text", id="src", placeholder="VideoUrl", name="videoUrl")
+            label(for="file") 이미지 파일
+            input(type="file", id="src", name="imgFile", accept="image/*")
+            input(type="submit", value="Add Match")

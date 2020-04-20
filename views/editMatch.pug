@@ -1,0 +1,17 @@
+extends layouts/main
+
+block content
+    .form-container
+        form(action=routes.editMatch(match.id), method="post")
+            input(type="text", placeholder="HomeTeam", name="home_team", value=match.home_team)
+            input(type="text", placeholder="AwayTeam", name="away_team", value=match.away_team)
+            input(type="text", placeholder="League", name="league", value=match.league)
+            input(type="text", placeholder="Round", name="round", value=match.round)
+            input(type="text", placeholder="Year", name="year", value=match.year)
+            input(type="text", placeholder="HomeScore", name="home_score", value=match.home_score)
+            input(type="text", placeholder="AwayScore", name="away_score", value=match.away_score)
+            input(type="text", placeholder="Stadium", name="stadium", value=match.stadium)
+            input(type="text", placeholder="City", name="city", value=match.city)
+            label(for="src") 하이라이트 링크
+            input(type="text", id="src", placeholder="VideoUrl", name="videoUrl" value=match.videoUrl)
+            input(type="submit", value="Update Match Info")

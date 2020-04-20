@@ -11,13 +11,8 @@ const CHANGE_PASSWORD = "/change-password";
 
 const MATCHES = "/matches";
 const MATCH_DETAIL = "/:id";
-const ADD_MATCH = "/add-match"
+const ADD_MATCH = "/addMatch"
 const EDIT_MATCH = "/:id/edit";
-
-const PLAYERS = "/players";
-const PLAYER_DETAIL = "/:id";
-const ADD_PLAYER = "/add-player";
-const EDIT_PLAYER = "/:id/edit";
 
 const routes = {
     home : HOME,
@@ -26,17 +21,31 @@ const routes = {
     logout : LOGOUT,
     search : SEARCH,
     users : USERS,
-    userDetail : USER_DETAIL,
+    userDetail : (id) => {
+        if(id) {
+            return `/users/${id}`;
+        } else {
+            return USER_DETAIL;
+        }
+    },
     editProfile : EDIT_PROFILE,
     changePassword : CHANGE_PASSWORD,
     matches : MATCHES,
-    matchDetail : MATCH_DETAIL,
+    matchDetail : (id) => {
+        if(id) {
+            return `/matches/${id}`;
+        } else {
+            return MATCH_DETAIL;
+        }
+    },
     addMatch : ADD_MATCH,
-    editMatch : EDIT_MATCH,
-    players : PLAYERS,
-    playerDetail : PLAYER_DETAIL,
-    addPlayer : ADD_PLAYER,
-    editPlayer : EDIT_PLAYER
-}
+    editMatch : (id) => {
+        if (id) {
+            return `/matches/${id}/edit`;
+        } else {
+            return EDIT_MATCH;
+        }
+    }
+};
 
 export default routes;

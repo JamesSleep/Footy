@@ -1,0 +1,7 @@
+mixin matchBlock(match = {})
+    .matchBlock
+        a(href=routes.matchDetail(match.id))
+            img.matchBlock__thumbnail(src=`/${match.imgUrl}`)
+            h2.match__team=match.home_team+" vs "+match.away_team
+            h4.match__fixture=match.league+" "+match.round
+            h4.match__date=match.year+" · "+match.stadium

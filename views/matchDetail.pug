@@ -1,0 +1,19 @@
+extends layouts/main
+
+block content 
+    .match_img
+        img(src=`/${match.imgUrl}`)
+    .match__info
+        h2.match__team=match.home_team+" vs "+match.away_team
+        h4.match__title=match.league+" "+match.round
+        h4.match__date=match.year+" · "+match.stadium+"("+match.city+")"
+        h4.match__score=match.home_team+" "+match.home_score+" : "+match.away_score+" "+match.away_team
+    .video__link
+        a(href=match.videoUrl, target="_blank") 하이라이트
+    .match__comments
+        if match.comments.length === 1
+            span.match__comment-number 1 comment
+        else
+            span.match__comment-number #{match.comments.length} comments
+    .edit_link
+        a(href=routes.editMatch(match.id)) Edit Match
